@@ -1,5 +1,5 @@
-import 'package:e_commerce/Home/HomeScreen.dart';
-import 'package:e_commerce/auth/register.dart';
+import 'package:e_commerce/auth/login.dart';
+import 'package:e_commerce/data/utils/shared_preference_utils.dart';
 import 'package:e_commerce/themes/app_colors.dart';
 import 'package:e_commerce/themes/app_fonts.dart';
 import 'package:e_commerce/themes/style.dart';
@@ -44,11 +44,21 @@ class _LoginScreenState extends State<AccountScreen> {
         backgroundColor: AppColors.whiteColor,
         automaticallyImplyLeading: false
         ,
-        title: Style.smallAppLogo,) ,
-
-
-
-      body:
+          title: Style.smallAppLogo,
+          actions: [
+            IconButton(
+                onPressed: () {
+                  SharedPreferenceUtils.removeData(key: 'token');
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      LoginScreen.routeName, (route) => false);
+                },
+                icon: Icon(
+                  Icons.logout,
+                  color: AppColors.primaryColor,
+                ))
+          ],
+        ),
+        body:
       Padding(
         padding: const EdgeInsets.all(12.0),
 

@@ -7,7 +7,5 @@ class AppColors
   static Color fadedBlack = Color(0xB3000000);
   static Color darkBlue = Color(0xFF06004F);
   static Color purpleColor = Color(0x9806004F);
-
-
-
+  static Color grayColor = Color(0x4D004182);
 }

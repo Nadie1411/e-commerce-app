@@ -2,7 +2,8 @@ import 'package:e_commerce/Home/HomeScreen.dart';
 import 'package:e_commerce/auth/cubit/login_cubit.dart';
 import 'package:e_commerce/auth/cubit/login_states.dart';
 import 'package:e_commerce/auth/register.dart';
-import 'package:e_commerce/data/dialouge_utils.dart';
+import 'package:e_commerce/data/utils/dialouge_utils.dart';
+import 'package:e_commerce/data/utils/shared_preference_utils.dart';
 import 'package:e_commerce/themes/app_colors.dart';
 import 'package:e_commerce/themes/app_fonts.dart';
 import 'package:e_commerce/themes/style.dart';
@@ -42,7 +43,11 @@ class _LoginScreenState extends State<LoginScreen> {
           {
             DialogeUtils.hideLoading(context);
             DialogeUtils.showMessage(context: context, content: 'Login Successfully', posActionName: 'ok', title: 'Success');
-          }
+          //todo: save token
+          SharedPreferenceUtils.saveData(
+              key: 'token', value: state.response.token);
+          Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+        }
 
 
 
@@ -122,7 +127,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: ()
                         {
                           cubit.login() ;
-                          Navigator.of(context).pushNamed(HomeScreen.routeName);}
+
+                            Navigator.of(context).pushNamed(HomeScreen.routeName);}
                         ,
                         child: Text("Login",style: AppFonts.appFont.bodyMedium!.copyWith(fontSize: 18,color: AppColors.primaryColor))),
                   ),

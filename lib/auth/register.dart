@@ -1,14 +1,11 @@
-import 'package:e_commerce/Home/HomeScreen.dart';
 import 'package:e_commerce/auth/cubit/register_cubit.dart';
 import 'package:e_commerce/auth/cubit/register_state.dart';
-import 'package:e_commerce/auth/register.dart';
-import 'package:e_commerce/data/dialouge_utils.dart';
+import 'package:e_commerce/data/utils/dialouge_utils.dart';
 import 'package:e_commerce/themes/app_colors.dart';
 import 'package:e_commerce/themes/app_fonts.dart';
 import 'package:e_commerce/themes/style.dart';
 import 'package:e_commerce/themes/textfield_custom.dart';
 import 'package:flutter/material.dart';
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterScreen extends StatefulWidget {

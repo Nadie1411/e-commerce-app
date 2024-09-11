@@ -41,6 +41,10 @@ dependencies:
   http: ^1.2.2
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
+  cached_network_image: ^3.4.1
+  readmore: ^3.0.0
+  shared_preferences: ^2.3.2
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:

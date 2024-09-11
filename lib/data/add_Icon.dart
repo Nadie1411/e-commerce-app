@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:e_commerce/themes/app_colors.dart';
+import 'package:flutter/material.dart';
 
 class AddIcon extends StatelessWidget {
 
@@ -10,13 +10,16 @@ class AddIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),
-          color: AppColors.primaryColor,),
+    return CircleAvatar(
+        backgroundColor: Colors.white,
+        radius: 15,
         child: IconButton(
           onPressed: (){},
-          icon:Icon(Icons.add,size: 30,color: AppColors.whiteColor,)
-          ,
+          icon: Icon(
+            Icons.add,
+            size: 20,
+            color: AppColors.whiteColor,
+          ),
         ));
   }
 }
